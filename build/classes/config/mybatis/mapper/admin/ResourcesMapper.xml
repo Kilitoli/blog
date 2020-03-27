@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ischoolbar.programmer.dao.admin.ResourcesDao">
+	<!-- 添加分类 -->
+	<insert id="add" parameterType="Resources">
+		insert into resources (id,name,password,address) values(null,#{name},#{password},#{address})
+	</insert>
+	<!-- 修改分类 -->
+	<update id="edit" parameterType="Resources">
+		update resources set name = #{name},password = #{password},address=#{address} where id = #{id}
+	</update>
+	<!-- 删除分类 -->
+	<delete id="delete" parameterType="int">
+		delete from resources where id = ${value}
+	</delete>
+	<!-- 分页获取分类列表 -->
+	<select id="findList" parameterType="Map" resultType="Resources">
+		select * from resources where 1 = 1 
+		<if test="name != null">
+			and name like '%${name}%' 
+		</if>
+		<if test="offset != null and pageSize != null">
+			limit #{offset},#{pageSize}
+		</if>
+	</select>
+	<!-- 获取所有分类列表 -->
+	<select id="findAll" parameterType="Map" resultType="Resources">
+		select * from resources 
+	</select>
+	<!-- 获取单个分类信息 -->
+	<select id="find" parameterType="Long" resultType="Resources">
+		select * from resources where id = #{value} 
+	</select>
+	<!-- 获取符合结果的总记录数 -->
+	<select id="getTotal" parameterType="Map" resultType="Integer">
+		select count(*) from resources where 1 = 1 
+		<if test="name != null">
+			and name like '%${name}%' 
+		</if>
+	</select>
+</mapper>

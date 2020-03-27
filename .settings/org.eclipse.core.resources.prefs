@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/views/common/header.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/common/menus.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/menu/list.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/role/list.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/system/login.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/system/welcome.jsp=UTF-8
+encoding//WebContent/index.jsp=UTF-8
+encoding//WebContent/resources=UTF-8
+encoding//src/com/ischoolbar/programmer/controller/admin/MenuController.java=UTF-8
+encoding//src/config/db.properties=UTF-8
+encoding/<project>=UTF-8
+separateDerivedEncodings=true
